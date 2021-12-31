@@ -1,6 +1,6 @@
 <section>
 	<div class="circle">
-		<p>Data</p>
+		<p>Explore</p>
 	</div>
 	<div class="arrow">
 		<span class="line" />
