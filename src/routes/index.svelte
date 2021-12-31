@@ -195,7 +195,7 @@
 
 	.description {
 		display: flex;
-		width: 25rem;
+		max-width: 25rem;
 		flex-direction: column;
 		padding-left: 1.5rem;
 	}
@@ -224,11 +224,16 @@
 		}
 		.product-detail {
 			flex-direction: column;
+			align-items: center;
 		}
 		.one,
 		.two,
 		.three {
 			margin: 0;
+		}
+		h3,
+		h5 {
+			font-size: 2.8rem;
 		}
 		p {
 			font-size: 1.2rem;
