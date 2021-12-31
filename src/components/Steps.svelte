@@ -7,7 +7,7 @@
 		<span class="triangle" />
 	</div>
 	<div class="circle">
-		<p>Asses</p>
+		<p>Assess</p>
 	</div>
 	<div class="arrow">
 		<span class="line" />

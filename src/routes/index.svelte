@@ -32,8 +32,8 @@
 		</header>
 		<section>
 			<div class="intro">
-				<h1>We help your business mitigate water risk</h1>
-				<h2>Our software helps you calculate your facilities water risk in real- time.</h2>
+				<h1>Financial water risk assessment in real-time</h1>
+				<h2>Faktor monitors your sities water assets and sources in real-time.</h2>
 			</div>
 			<Button trackEvent={cta_clicked} background="#0e171f" color="#f9fafb " />
 			<img class="papper-cut" src="cutout.svg" alt="papper cut out effect" />
@@ -42,29 +42,30 @@
 			</div>
 		</section>
 		<section><Steps /></section>
-		<section>
-			<h3>Features</h3>
-			<div class="product-detail">
-				<div class="one">
-					<Icon source="./icons/factory.svg" />
-					<div class="description">
-						<h4>Facilites</h4>
-						<p />
-					</div>
+		<h3>Features</h3>
+		<section class="product-detail">
+			<div class="one">
+				<Icon source="./icons/factory.svg" />
+				<div class="description">
+					<h4>Facilites</h4>
+					<p>
+						With the input of your operational data manage the water availability in your
+						facilities. Track water trends.
+					</p>
 				</div>
-				<div class="two">
-					<Icon source="./icons/recycle.svg" />
-					<div class="description">
-						<h4>Treatment</h4>
-						<p />
-					</div>
+			</div>
+			<div class="two">
+				<Icon source="./icons/recycle.svg" />
+				<div class="description">
+					<h4>Treatment</h4>
+					<p>Manage your water treatment and measure how much water your reusing.</p>
 				</div>
-				<div class="three">
-					<Icon source="./icons/impact.svg" />
-					<div class="description">
-						<h4>Impact</h4>
-						<p />
-					</div>
+			</div>
+			<div class="three">
+				<Icon source="./icons/impact.svg" />
+				<div class="description">
+					<h4>Impact</h4>
+					<p>Find out the physical, regulatory and reputational risks of sites you operate in.</p>
 				</div>
 			</div>
 		</section>
@@ -77,7 +78,7 @@
 			</p>
 		</section>
 	</main>
-	<footer>© {date.getFullYear()} faktor All rights reserved</footer>
+	<footer>© {date.getFullYear()} Faktor, Inc All rights reserved</footer>
 </div>
 
 <style>
@@ -141,7 +142,7 @@
 	h1 {
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		font-size: 6.4rem;
-		max-width: 75rem;
+		max-width: 80rem;
 		margin: 0;
 		line-height: 6rem;
 	}
@@ -163,34 +164,23 @@
 		width: 100rem;
 	}
 	.product-detail {
-		display: grid;
+		display: flex;
+		flex-direction: row;
 		align-items: baseline;
 		justify-content: center;
-		margin: 0 auto;
-		grid-template-rows: repeat(3, 1fr);
-	}
-	.one {
-		margin-left: 5rem;
-		grid-row: 1/3;
-	}
-	.two {
-		grid-row: 2/3;
-		margin-left: -25rem;
-	}
-	.three {
-		grid-row: 3/3;
-		margin-left: 20rem;
 	}
 	.one,
 	.two,
 	.three {
 		display: flex;
 		flex-direction: row;
+		padding: 2rem;
 	}
 	h3,
 	h5 {
 		text-align: center;
-		font-size: 4.8rem;
+		font-size: 3.4rem;
+		margin: 3.5rem;
 	}
 	h4 {
 		font-size: 2rem;
@@ -204,7 +194,7 @@
 
 	.description {
 		display: flex;
-		width: 50rem;
+		width: 25rem;
 		flex-direction: column;
 		padding-left: 1.5rem;
 	}
@@ -228,23 +218,16 @@
 		.product img {
 			width: 40rem;
 		}
-		.product-detail {
-			display: grid;
-			grid-auto-columns: unset;
-		}
 		.description {
 			width: 30rem;
+		}
+		.product-detail {
+			flex-direction: column;
 		}
 		.one,
 		.two,
 		.three {
 			margin: 0;
-			grid-row: unset;
-			grid-column: unset;
-		}
-		h3,
-		h5 {
-			font-size: 3.4rem;
 		}
 		p {
 			font-size: 1.2rem;
