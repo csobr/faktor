@@ -71,6 +71,8 @@
 		.circle {
 			width: 6rem;
 			height: 6rem;
+			min-width: 6rem;
+			min-height: 6rem;
 		}
 		.line {
 			width: 2rem;
