@@ -1,16 +1,17 @@
 <script>
-	import * as Amplitude from '@amplitude/node';
+	import { init } from '@amplitude/node';
 
 	import Button from '../components/Button.svelte';
 	import Icon from '../components/Icon.svelte';
 	import Steps from '../components/Steps.svelte';
-
 	import { varibales } from '$lib/variables';
 
-	const client = Amplitude.init(varibales.apiKey);
+	const client = init(varibales.apiKey, {
+		serverUrl: 'https://api.eu.amplitude.com/2/httpapi'
+	});
 
 	const event = 'Contact sales button clicked';
-	const cta_clicked = client.logEvent({ event_type: event });
+	const cta_clicked = client.logEvent({ event_type: event, user_id: '' });
 	const date = new Date();
 </script>
 
@@ -23,7 +24,7 @@
 			</div>
 			<div class="top-right">
 				<Button
-					trackEvent={cta_clicked}
+					on:click={() => cta_clicked}
 					background="#f9fafb"
 					color="#0e171f"
 					border="0.1rem solid #0e171f"
@@ -35,7 +36,7 @@
 				<h1>Financial water risk assessment in real-time</h1>
 				<h2>Faktor monitors your sities water assets and sources in real-time.</h2>
 			</div>
-			<Button trackEvent={cta_clicked} background="#0e171f" color="#f9fafb " />
+			<Button on:click={() => cta_clicked} background="#0e171f" color="#f9fafb " />
 			<img class="papper-cut" src="cutout.svg" alt="papper cut out effect" />
 			<div class="product">
 				<img src="landing_product.png" alt="product mockup" />
@@ -71,7 +72,7 @@
 		</section>
 		<section>
 			<h5>Get started</h5>
-			<Button trackEvent={cta_clicked} background="#0e171f" color="#f9fafb " />
+			<Button on:click={() => cta_clicked} background="#0e171f" color="#f9fafb " />
 			<p style="color: #6E7378 ; text-align:center; padding:1rem;">
 				For general queries, including partnership opportunities,
 				<br />please email info@faktor.world.

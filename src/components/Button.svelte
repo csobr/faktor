@@ -2,11 +2,10 @@
 	export let background: string = '';
 	export let color: string = '';
 	export let border: string = '';
-	export let trackEvent: any = {};
 </script>
 
 <button
-	on:click={() => trackEvent}
+	on:click
 	data-tf-popup="HdbmLNpA"
 	data-tf-iframe-props="title=Contact"
 	style="background-color:{background};color:{color};border:{border};"
