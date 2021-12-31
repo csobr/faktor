@@ -1,8 +1,16 @@
 <script>
+	import * as Amplitude from '@amplitude/node';
+
 	import Button from '../components/Button.svelte';
 	import Icon from '../components/Icon.svelte';
 	import Steps from '../components/Steps.svelte';
 
+	import { varibales } from '$lib/variables';
+
+	const client = Amplitude.init(varibales.apiKey);
+
+	const event = 'Contact sales button clicked';
+	const cta_clicked = client.logEvent({ event_type: event });
 	const date = new Date();
 </script>
 
@@ -14,7 +22,12 @@
 				<img src="logo_word_mark.svg" alt="logo" />
 			</div>
 			<div class="top-right">
-				<Button background="#f9fafb" color="#0e171f" border="0.1rem solid #0e171f" />
+				<Button
+					trackEvent={cta_clicked}
+					background="#f9fafb"
+					color="#0e171f"
+					border="0.1rem solid #0e171f"
+				/>
 			</div>
 		</header>
 		<section>
@@ -22,7 +35,7 @@
 				<h1>We help your business mitigate water risk</h1>
 				<h2>Our software helps you calculate your facilities water risk in real- time.</h2>
 			</div>
-			<Button background="#0e171f" color="#f9fafb " />
+			<Button trackEvent={cta_clicked} background="#0e171f" color="#f9fafb " />
 			<img class="papper-cut" src="cutout.svg" alt="papper cut out effect" />
 			<div class="product">
 				<img src="landing_product.png" alt="product mockup" />
@@ -57,7 +70,7 @@
 		</section>
 		<section>
 			<h5>Get started</h5>
-			<Button background="#0e171f" color="#f9fafb " />
+			<Button trackEvent={cta_clicked} background="#0e171f" color="#f9fafb " />
 			<p style="color: #6E7378 ; text-align:center; padding:1rem;">
 				For general queries, including partnership opportunities,
 				<br />please email info@faktor.world.
