@@ -9,11 +9,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 13rem;
-		height: 13rem;
+		width: 10rem;
+		height: 10rem;
 		background-color: #f9fafb;
 		border: 0.1rem solid #0e171f;
 		border-radius: 50%;
+	}
+	img {
+		width: 4rem;
 	}
 	@media (max-width: 991.98px) {
 		.circle {
