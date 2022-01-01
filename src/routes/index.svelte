@@ -70,7 +70,7 @@
 					<h4>Facilites</h4>
 					<p>
 						With the input of your operational data manage the water availability in your
-						facilities. Track water trends.
+						facilities.
 					</p>
 				</div>
 			</div>
@@ -85,7 +85,9 @@
 				<Icon source="./icons/impact.svg" />
 				<div class="description">
 					<h4>Impact</h4>
-					<p>Find out the physical, regulatory and reputational risks of sites you operate in.</p>
+					<p>
+						Find out the physical, regulatory and reputational risks of the sites you operate in.
+					</p>
 				</div>
 			</div>
 		</section>
@@ -98,7 +100,7 @@
 			</p>
 		</section>
 	</main>
-	<footer>© {date.getFullYear()} Faktor, Inc All rights reserved</footer>
+	<footer>© {date.getFullYear()} Faktor All rights reserved</footer>
 </div>
 
 <style>
