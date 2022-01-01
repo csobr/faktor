@@ -56,9 +56,9 @@
 				<h2>Faktor monitors your sities water assets and sources in real-time.</h2>
 			</div>
 			<Button on:click={() => mainCta()} background="#0e171f" color="#f9fafb " />
-			<img class="papper-cut" src="cutout.svg" alt="papper cut out effect" />
+			<img class="papper-cut" src="cutout.svg" alt="Background layer" />
 			<div class="product">
-				<img src="landing_product.png" alt="product mockup" />
+				<img src="landing_product.png" alt="product view" />
 			</div>
 		</section>
 		<section><Steps /></section>
@@ -158,7 +158,6 @@
 		margin-top: 15rem;
 		text-align: center;
 		margin-bottom: 3rem;
-		z-index: 1;
 	}
 
 	h1 {
@@ -172,16 +171,15 @@
 		font-weight: normal;
 	}
 	.papper-cut {
-		position: relative;
-		z-index: 0;
+		width: auto;
 		height: 100rem;
 	}
 	.product {
 		margin-top: -75rem;
+		position: relative;
 	}
 	.product img {
 		align-items: center;
-		position: relative;
 		width: 100rem;
 	}
 	.product-detail {
@@ -230,11 +228,12 @@
 			line-height: 3.8rem;
 		}
 		.papper-cut {
-			width: 50rem;
-			top: -28rem;
+			width: 60rem;
+			height: 50rem;
+			position: relative;
 		}
 		.product {
-			margin-top: -90rem;
+			margin-top: -35rem;
 		}
 		.product img {
 			width: 40rem;
