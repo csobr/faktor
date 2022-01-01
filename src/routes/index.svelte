@@ -1,18 +1,31 @@
-<script>
-	import { init } from '@amplitude/node';
-
+<script lang="ts">
+	import amplitude from 'amplitude-js';
 	import Button from '../components/Button.svelte';
 	import Icon from '../components/Icon.svelte';
 	import Steps from '../components/Steps.svelte';
 	import { varibales } from '$lib/variables';
 
-	const client = init(varibales.apiKey, {
-		serverUrl: 'https://api.eu.amplitude.com/2/httpapi'
-	});
+	const initAmplitude = () => {
+		if (typeof window !== 'undefined') {
+			amplitude.getInstance().init(varibales.apiKey);
+		}
+	};
+	initAmplitude();
+	const navButton = () => {
+		const event = 'Nav contact sales button clicked';
+		amplitude.getInstance().logEvent(event);
+	};
+	const mainCta = () => {
+		const event = 'Main contact sales button clicked';
+		amplitude.getInstance().logEvent(event);
+	};
 
-	const event = 'Contact sales button clicked';
-	const cta_clicked = client.logEvent({ event_type: event, user_id: '' });
-	const date = new Date();
+	const bottomButton = () => {
+		const event = 'Bottom contact sales button clicked';
+		amplitude.getInstance().logEvent(event);
+	};
+
+	const date: Date = new Date();
 </script>
 
 <div class="wrapper">
@@ -24,7 +37,7 @@
 			</div>
 			<div class="top-right">
 				<Button
-					on:click={() => cta_clicked}
+					on:click={() => navButton()}
 					background="#f9fafb"
 					color="#0e171f"
 					border="0.1rem solid #0e171f"
@@ -36,7 +49,7 @@
 				<h1>Financial water risk assessment in real-time</h1>
 				<h2>Faktor monitors your sities water assets and sources in real-time.</h2>
 			</div>
-			<Button on:click={() => cta_clicked} background="#0e171f" color="#f9fafb " />
+			<Button on:click={() => mainCta()} background="#0e171f" color="#f9fafb " />
 			<img class="papper-cut" src="cutout.svg" alt="papper cut out effect" />
 			<div class="product">
 				<img src="landing_product.png" alt="product mockup" />
@@ -72,7 +85,7 @@
 		</section>
 		<section>
 			<h5>Get started</h5>
-			<Button on:click={() => cta_clicked} background="#0e171f" color="#f9fafb " />
+			<Button on:click={() => bottomButton()} background="#0e171f" color="#f9fafb " />
 			<p style="color: #6E7378 ; text-align:center; padding:1rem;">
 				For general queries, including partnership opportunities,
 				<br />please email info@faktor.world.
