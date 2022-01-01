@@ -1,4 +1,4 @@
 /// <reference types="@sveltejs/kit" />
 interface ImportMetaEnv {
-	API_KEY: string;
+	VITE_API_KEY: string;
 }

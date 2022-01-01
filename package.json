@@ -29,6 +29,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@amplitude/node": "^1.9.1"
+    "amplitude-js": "^8.14.1"
   }
 }
