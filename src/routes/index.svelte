@@ -11,6 +11,12 @@
 		}
 	};
 	initAmplitude();
+	const pageView = () => {
+		if (typeof window !== 'undefined') {
+			amplitude.getInstance().logEvent('Page view');
+		}
+	};
+	pageView();
 	const navButton = () => {
 		const event = 'Nav contact sales button clicked';
 		amplitude.getInstance().logEvent(event);
@@ -106,7 +112,7 @@
 	:global(body) {
 		box-sizing: border-box;
 		background-color: #f9fafb;
-		background: url('noise.svg');
+		background: url('/noise.svg');
 		color: #0e171f;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 1.2rem;
