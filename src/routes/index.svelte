@@ -170,13 +170,12 @@
 		font-weight: normal;
 	}
 	.papper-cut {
-		width: 125rem;
-		height: 100rem;
 		position: relative;
 		z-index: 0;
+		height: 100rem;
 	}
 	.product {
-		margin-top: -65rem;
+		margin-top: -75rem;
 	}
 	.product img {
 		align-items: center;
