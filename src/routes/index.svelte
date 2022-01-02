@@ -11,9 +11,11 @@
 		}
 	};
 	initAmplitude();
+	const identity = new amplitude.Identify();
 	const pageView = () => {
 		if (typeof window !== 'undefined') {
-			amplitude.getInstance().logEvent('Page view');
+			amplitude.getInstance().logEvent('Page view', { includeReferrer: true });
+			amplitude.getInstance().identity(identity);
 		}
 	};
 	pageView();
