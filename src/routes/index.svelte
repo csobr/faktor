@@ -176,8 +176,6 @@
 		font-weight: normal;
 	}
 	.papper-cut {
-		width: 110rem;
-		height: 100rem;
 		margin-top: -5rem;
 	}
 	.product {
