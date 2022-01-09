@@ -50,9 +50,9 @@
 			<div class="top-right">
 				<Button
 					on:click={() => navButton()}
-					background="#f9fafb"
-					color="#0e171f"
-					border="0.1rem solid #0e171f"
+					background="#0e171f"
+					color="#f9fafb"
+					border="0.1rem solid #f9fafb"
 				/>
 			</div>
 		</header>
@@ -61,7 +61,7 @@
 				<h1>Financial water risk assessment in real-time</h1>
 				<h2>Faktor monitors your sities water assets and sources in real-time.</h2>
 			</div>
-			<Button on:click={() => mainCta()} background="#0e171f" color="#f9fafb " />
+			<Button on:click={() => mainCta()} background="#f9fafb" color="#0e171f" />
 			<img class="papper-cut" src="cutout.svg" alt="Background layer" />
 			<div class="product">
 				<img src="landing_product.png" alt="product view" />
@@ -99,7 +99,7 @@
 		</section>
 		<section>
 			<h5>Get started</h5>
-			<Button on:click={() => bottomButton()} background="#0e171f" color="#f9fafb " />
+			<Button on:click={() => bottomButton()} background="#f9fafb" color="#0e171f" />
 			<p style="color: #6E7378 ; text-align:center; padding:1rem;">
 				For general queries, including partnership opportunities,
 				<br />please email info@faktor.world.
@@ -119,9 +119,8 @@
 	}
 	:global(body) {
 		box-sizing: border-box;
-		background-color: #f9fafb;
-		background: url('/noise.svg');
-		color: #0e171f;
+		background-color: #0e171f;
+		color: #f9fafb;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 1.2rem;
 		overflow-x: hidden;
@@ -177,11 +176,12 @@
 		font-weight: normal;
 	}
 	.papper-cut {
-		width: auto;
+		width: 110rem;
 		height: 100rem;
+		margin-top: -5rem;
 	}
 	.product {
-		margin-top: -75rem;
+		margin-top: -65rem;
 		position: relative;
 	}
 	.product img {

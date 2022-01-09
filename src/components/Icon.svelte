@@ -13,8 +13,7 @@
 		height: 10rem;
 		min-width: 10rem;
 		min-height: 10rem;
-		background-color: #f9fafb;
-		border: 0.1rem solid #0e171f;
+		border: 0.1rem solid #f9fafb;
 		border-radius: 50%;
 	}
 	img {

@@ -40,8 +40,7 @@
 		justify-content: center;
 		width: 15rem;
 		height: 15rem;
-		background-color: #f9fafb;
-		border: 0.1rem solid #0e171f;
+		border: 0.1rem solid #f9fafb;
 		border-radius: 50%;
 	}
 	p {
@@ -58,14 +57,14 @@
 	.line {
 		height: 0.1rem;
 		width: 5rem;
-		background-color: #0e171f;
+		background-color: #f9fafb;
 	}
 	.triangle {
 		width: 0;
 		height: 0;
 		border-top: 1rem solid transparent;
 		border-bottom: 1rem solid transparent;
-		border-left: 1.3rem solid #0e171f;
+		border-left: 1.3rem solid #f9fafb;
 	}
 	@media (max-width: 991.98px) {
 		.circle {
@@ -82,7 +81,7 @@
 			height: 0;
 			border-top: 0.5rem solid transparent;
 			border-bottom: 0.5rem solid transparent;
-			border-left: 1rem solid #0e171f;
+			border-left: 1rem solid #f9fafb;
 		}
 		p {
 			font-size: 1.2rem;
