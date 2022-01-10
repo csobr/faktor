@@ -25,6 +25,7 @@
 		padding: 1.8rem 2.2rem;
 		font-size: 1.4rem;
 		font-weight: 700;
+		cursor: pointer;
 	}
 	@media (max-width: 991.98px) {
 		button {
