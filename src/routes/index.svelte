@@ -1,9 +1,10 @@
 <script lang="ts">
+	import '../lib/global.css';
 	import amplitude from 'amplitude-js';
 	import Button from '../components/Button.svelte';
-	import Icon from '../components/Icon.svelte';
 	import Steps from '../components/Steps.svelte';
 	import { varibales } from '$lib/variables';
+	import Feature from '../components/feature.svelte';
 
 	const initAmplitude = () => {
 		if (typeof window !== 'undefined') {
@@ -11,10 +12,11 @@
 		}
 	};
 	initAmplitude();
-	const identity = new amplitude.Identify();
+
 	const pageView = () => {
 		if (typeof window !== 'undefined') {
-			amplitude.getInstance().logEvent('Page view', null, {
+			const identity = new amplitude.Identify();
+			amplitude.getInstance().logEvent('Page visit', {
 				includeReferrer: true,
 				includeUtm: true,
 				includeGclid: true
@@ -71,7 +73,7 @@
 		<h3>Features</h3>
 		<section class="product-detail">
 			<div class="one">
-				<Icon source="./icons/factory.svg" />
+				<Feature source="./icons/factory.svg" />
 				<div class="description">
 					<h4>Facilites</h4>
 					<p>
@@ -81,14 +83,14 @@
 				</div>
 			</div>
 			<div class="two">
-				<Icon source="./icons/recycle.svg" />
+				<Feature source="./icons/recycle.svg" />
 				<div class="description">
 					<h4>Treatment</h4>
 					<p>Manage your water treatment and measure how much water your reusing.</p>
 				</div>
 			</div>
 			<div class="three">
-				<Icon source="./icons/impact.svg" />
+				<Feature source="./icons/impact.svg" />
 				<div class="description">
 					<h4>Impact</h4>
 					<p>
@@ -110,21 +112,6 @@
 </div>
 
 <style>
-	:global(html) {
-		margin: 0;
-		padding: 0;
-		height: 100%;
-		width: 100%;
-		font-size: 62.5%;
-	}
-	:global(body) {
-		box-sizing: border-box;
-		background-color: #0a1015;
-		color: #f9fafb;
-		font-family: Arial, Helvetica, sans-serif;
-		font-size: 1.2rem;
-		overflow-x: hidden;
-	}
 	.wrapper {
 		display: flex;
 		flex-direction: column;
