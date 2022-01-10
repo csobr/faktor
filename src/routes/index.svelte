@@ -119,7 +119,7 @@
 	}
 	:global(body) {
 		box-sizing: border-box;
-		background-color: #0e171f;
+		background-color: #0a1015;
 		color: #f9fafb;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 1.2rem;
@@ -179,7 +179,7 @@
 		margin-top: -5rem;
 	}
 	.product {
-		margin-top: -65rem;
+		margin-top: -75rem;
 		position: relative;
 	}
 	.product img {
