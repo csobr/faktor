@@ -116,6 +116,8 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+		background-color: #0a1015;
+		color: #f9fafb;
 	}
 	header {
 		display: flex;
