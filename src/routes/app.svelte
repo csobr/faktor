@@ -79,6 +79,9 @@
 	}
 
 	.inner {
+		padding-left: 5rem;
+		padding-top: 3rem;
+		margin: 2rem;
 		background-color: rgb(255, 255, 255);
 		width: 90%;
 		border-radius: 1rem;
