@@ -1,33 +1,32 @@
-<script>
+<script lang="ts">
 	import '../lib/global.css';
-	import FactoryIcon from '../components/icons/FactoryIcon.svelte';
-	import ImpactIcon from '../components/icons/ImpactIcon.svelte';
-	import OverviewIcon from '../components/icons/OverviewIcon.svelte';
-	import RecycleIcon from '../components/icons/RecycleIcon.svelte';
+	import { navOptions } from '../components/Navigation.svelte';
+	import Icon from '../components/icons/Icon.svelte';
+
+	let selected = navOptions[0];
+	let intSelected = 0;
+
+	function changeComponent(event) {
+		selected = navOptions[event.srcElement.id];
+		intSelected = event.srcElement.id;
+	}
 </script>
 
 <main class="container">
 	<nav>
 		<h1>Faktor</h1>
 		<ul class="nav-links">
-			<li class="nav-item">
-				<OverviewIcon color="#6e7378" width={20} height={20} /><a href="/">Overview</a>
-			</li>
-
-			<li class="nav-item">
-				<FactoryIcon color="#6e7378" width={20} height={20} /><a href="/">Facilites</a>
-			</li>
-
-			<li class="nav-item">
-				<RecycleIcon color="#6e7378" width={22} height={22} /><a href="/">Treatment</a>
-			</li>
-
-			<li class="nav-item">
-				<ImpactIcon color="#6e7378" width={30} height={30} /><a href="/">Impact</a>
-			</li>
+			{#each navOptions as option, i}
+				<li class="nav-item" class:active={intSelected == i ? 'active' : ''}>
+					<Icon name={option.page} />
+					<a id={i} on:click={changeComponent}>{option.page}</a>
+				</li>
+			{/each}
 		</ul>
 	</nav>
-	<div class="inner" />
+	<div class="inner">
+		<svelte:component this={selected.component} />
+	</div>
 </main>
 
 <style>
@@ -41,31 +40,47 @@
 		text-align: center;
 		width: 25rem;
 	}
+	h1 {
+		padding: 1rem;
+		text-transform: uppercase;
+	}
 	.nav-links {
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 		flex-direction: column;
-		height: 20rem;
+		padding: 0;
+		margin: 5rem;
+		height: 22rem;
 	}
 	.nav-links a {
+		padding-left: 1rem;
 		color: #6e7378;
 		text-decoration: none;
 		font-size: 1.6rem;
+		text-transform: capitalize;
 	}
 	.nav-item {
 		display: flex;
-		flex-direction: row;
+		justify-content: flex-start;
 		align-items: center;
-		width: 10rem;
-		justify-content: space-around;
+		list-style: none;
+		width: 15rem;
+		padding-left: 2rem;
+	}
+	.active {
+		display: flex;
+		align-items: center;
+		padding-left: 2rem;
+		width: 15rem;
+		height: 5rem;
+		background-color: #e3e8ec;
+		border-radius: 10px;
 	}
 
 	.inner {
-		display: flex;
-		align-items: flex-end;
 		background-color: rgb(255, 255, 255);
-		width: 80rem;
-		height: 95%;
+		width: 90%;
 		border-radius: 1rem;
 	}
 </style>
