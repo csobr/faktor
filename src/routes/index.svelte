@@ -1,10 +1,10 @@
 <script lang="ts">
-	import '../lib/global.css';
+	import '../global.css';
 	import amplitude from 'amplitude-js';
-	import Button from '../components/Button.svelte';
+	import Button from '../components/CTA_Button.svelte';
 	import Steps from '../components/Steps.svelte';
 	import { varibales } from '$lib/variables';
-	import Feature from '../components/feature.svelte';
+	import Feature from '../components/Feature.svelte';
 
 	const initAmplitude = () => {
 		if (typeof window !== 'undefined') {
@@ -15,16 +15,11 @@
 
 	const pageView = () => {
 		if (typeof window !== 'undefined') {
-			const identity = new amplitude.Identify();
-			amplitude.getInstance().logEvent('Page visit', {
-				includeReferrer: true,
-				includeUtm: true,
-				includeGclid: true
-			});
-			amplitude.getInstance().identity(identity);
+			amplitude.getInstance().logEvent('Page visit');
 		}
 	};
 	pageView();
+
 	const navButton = () => {
 		const event = 'Nav contact sales button clicked';
 		amplitude.getInstance().logEvent(event);
@@ -61,7 +56,7 @@
 		<section>
 			<div class="intro">
 				<h1>Financial water risk assessment in real-time</h1>
-				<h2>Faktor monitors your sities water assets and sources in real-time.</h2>
+				<h2>Faktor monitors your sites water assets and sources in real-time.</h2>
 			</div>
 			<Button on:click={() => mainCta()} background="#f9fafb" color="#0e171f" />
 			<img class="papper-cut" src="cutout.svg" alt="Background layer" />
@@ -103,8 +98,7 @@
 			<h5>Get started</h5>
 			<Button on:click={() => bottomButton()} background="#f9fafb" color="#0e171f" />
 			<p style="color: #6E7378 ; text-align:center; padding:1rem;">
-				For general queries, including partnership opportunities,
-				<br />please email info@faktor.world.
+				For general queries, please email info@faktor.world.
 			</p>
 		</section>
 	</main>
@@ -163,6 +157,8 @@
 	}
 	h2 {
 		font-weight: normal;
+		font-size: 2rem;
+		padding: 1rem;
 	}
 	.papper-cut {
 		margin-top: -5rem;
@@ -217,22 +213,26 @@
 
 	@media (max-width: 991.98px) {
 		h1 {
-			font-size: 3.8rem;
-			line-height: 3.8rem;
+			font-size: 7.8rem;
+			line-height: 6.8rem;
+		}
+		h2 {
+			font-size: 2rem;
 		}
 		.papper-cut {
-			width: 60rem;
-			height: 50rem;
+			max-width: 90rem;
+			height: 90rem;
 			position: relative;
 		}
 		.product {
-			margin-top: -35rem;
+			margin-top: -65rem;
 		}
 		.product img {
-			width: 40rem;
+			width: 95rem;
 		}
 		.description {
 			width: 30rem;
+			justify-content: center;
 		}
 		.product-detail {
 			flex-direction: column;
@@ -245,11 +245,14 @@
 		}
 		h3,
 		h5 {
-			font-size: 2.8rem;
+			font-size: 4rem;
+		}
+		h4 {
+			font-size: 2.4rem;
 		}
 		p {
-			font-size: 1.2rem;
-			line-height: 2rem;
+			font-size: 1.6rem;
+			line-height: 2.6rem;
 		}
 	}
 </style>
