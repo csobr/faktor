@@ -1,0 +1,26 @@
+:root {
+	--color: #f9fafb;
+	--background: #0a1015;
+}
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.6rem;
+	overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
