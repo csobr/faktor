@@ -147,9 +147,14 @@
 		text-align: center;
 		margin-bottom: 3rem;
 	}
-
-	h1 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
+	h1 {
 		font-size: 6.4rem;
 		max-width: 80rem;
 		margin: 0;
