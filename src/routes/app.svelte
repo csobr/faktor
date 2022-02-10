@@ -1,7 +1,28 @@
 <script lang="ts">
-	import '../lib/global.css';
+	import '../global.css';
+	import { onMount } from 'svelte';
+	import auth from '../lib/authService';
+	import { isAuthenticated, setError, user } from '../lib/store';
+
 	import { navOptions } from '../components/Navigation.svelte';
 	import Icon from '../components/icons/Icon.svelte';
+	import Login from '../components/Login.svelte';
+
+	let auth0Client;
+
+	onMount(async () => {
+		auth0Client = await auth.createClient();
+		isAuthenticated.set(await auth0Client.isAuthenticated());
+		user.set(await auth0Client.getUser());
+	});
+
+	function login() {
+		auth.loginWithPopup(auth0Client);
+	}
+
+	function logout() {
+		auth.logout(auth0Client);
+	}
 
 	let selected = navOptions[0];
 	let intSelected = 0;
@@ -13,20 +34,25 @@
 </script>
 
 <main class="container">
-	<nav>
-		<h1>Faktor</h1>
-		<ul class="nav-links">
-			{#each navOptions as option, i}
-				<li class="nav-item" class:active={intSelected == i ? 'active' : ''}>
-					<Icon name={option.page} />
-					<a id={i} on:click={changeComponent}>{option.page}</a>
-				</li>
-			{/each}
-		</ul>
-	</nav>
-	<div class="inner">
-		<svelte:component this={selected.component} />
-	</div>
+	{#if $isAuthenticated}
+		<nav>
+			<h1>Faktor</h1>
+			<ul class="nav-links">
+				{#each navOptions as option, i}
+					<li class="nav-item" class:active={intSelected == i ? 'active' : ''}>
+						<Icon name={option.page} />
+						<a id={i} on:click={changeComponent}>{option.page}</a>
+					</li>
+				{/each}
+				<li><a on:click={logout}>Log out</a></li>
+			</ul>
+		</nav>
+		<div class="inner">
+			<svelte:component this={selected.component} />
+		</div>
+	{:else}
+		<Login on:click={login} error={$setError} />
+	{/if}
 </main>
 
 <style>
