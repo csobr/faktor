@@ -67,11 +67,14 @@
 		border-left: 1.3rem solid #f9fafb;
 	}
 	@media (max-width: 991.98px) {
+		section {
+			width: auto;
+		}
 		.circle {
-			width: 6rem;
-			height: 6rem;
-			min-width: 6rem;
-			min-height: 6rem;
+			width: 15rem;
+			height: 15rem;
+			min-width: 15rem;
+			min-height: 15rem;
 		}
 		.line {
 			width: 2rem;
@@ -84,7 +87,7 @@
 			border-left: 1rem solid #f9fafb;
 		}
 		p {
-			font-size: 1.2rem;
+			font-size: 1.8rem;
 		}
 	}
 </style>
