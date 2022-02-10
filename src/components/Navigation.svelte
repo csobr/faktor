@@ -1,8 +1,8 @@
 <script context="module">
-	import Overview from '../routes/overview.svelte';
-	import Sites from '../routes/sites.svelte';
-	import Recycle from '../routes/treatment.svelte';
-	import Impact from '../routes/impact.svelte';
+	import Overview from '../app/overview.svelte';
+	import Sites from '../app/sites.svelte';
+	import Recycle from '../app/treatment.svelte';
+	import Impact from '../app/impact.svelte';
 
 	export const navOptions = [
 		{ page: 'overview', component: Overview },
