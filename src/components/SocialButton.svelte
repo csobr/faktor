@@ -18,11 +18,12 @@
 		padding: 1.5rem 4.5rem;
 		border: 0;
 		border-radius: 0.4rem;
-		border: 0.1rem solid #0e171f;
-		background-color: #f9fafb;
+		border: 0.1rem solid #f9fafb;
+		background-color: #0e171f;
 		font-size: 1.6rem;
 		font-weight: 700;
 		cursor: pointer;
+		color: #f9fafb;
 	}
 	@media (max-width: 991.98px) {
 		button {
