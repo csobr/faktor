@@ -5,15 +5,12 @@
 	export let error = '';
 </script>
 
-<svelte:head>
-	<title>Sign in</title>
-</svelte:head>
 <div class="wrapper">
 	<section>
 		<img class="logo" src="logo_light.svg" alt="logo" />
 		<div class="inner">
 			<h1>Sign in to Faktor</h1>
-			<p>{error}</p>
+			<p class="error-text">{error}</p>
 			<SocialButton text="Continue with Google" on:click />
 		</div>
 	</section>
@@ -30,6 +27,10 @@
 		font-size: 4.8rem;
 		font-weight: 700;
 		margin: 0;
+	}
+	.error-text {
+		color: #ff0606;
+		font-size: 1.6rem;
 	}
 	.wrapper {
 		display: flex;
