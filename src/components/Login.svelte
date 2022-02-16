@@ -10,7 +10,12 @@
 		<img class="logo" src="logo_light.svg" alt="logo" />
 		<div class="inner">
 			<h1>Sign in to Faktor</h1>
-			<p class="error-text">{error}</p>
+			<div class="error-message">
+				{#if error}
+					<img alt="error-icon" src="/icons/error.svg" />
+					<p>{error}</p>
+				{/if}
+			</div>
 			<SocialButton text="Continue with Google" on:click />
 		</div>
 	</section>
@@ -29,9 +34,20 @@
 		margin: 0;
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	}
-	.error-text {
+	.error-message {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		width: 100%;
+		height: auto;
+		align-items: center;
+	}
+	.error-message p {
 		color: #ff0606;
 		font-size: 1.6rem;
+	}
+	.error-message img {
+		padding: 1rem;
 	}
 	.wrapper {
 		display: flex;
