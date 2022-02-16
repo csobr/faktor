@@ -27,6 +27,7 @@
 		font-size: 4.8rem;
 		font-weight: 700;
 		margin: 0;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	}
 	.error-text {
 		color: #ff0606;
