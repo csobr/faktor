@@ -44,6 +44,7 @@
 				<img src="logo.svg" alt="logo" />
 				<img src="logo_word_mark.svg" alt="logo" />
 			</div>
+
 			<div class="top-right">
 				<Button
 					on:click={() => navButton()}
@@ -57,14 +58,15 @@
 			<div class="intro">
 				<h1>Financial water risk assessment in real-time</h1>
 				<h2>Faktor monitors your sites water assets and sources in real-time.</h2>
+				<br />
+				<Button on:click={() => mainCta()} background="#f9fafb" color="#0e171f" />
 			</div>
-			<Button on:click={() => mainCta()} background="#f9fafb" color="#0e171f" />
-			<img class="papper-cut" src="cutout.svg" alt="Background layer" />
 			<div class="product">
-				<img src="landing_product.png" alt="product view" />
+				<img class="symbol" src="depth.svg" alt="Background layer" />
+				<img class="product-showcase" src="landing_product.png" alt="product view" />
 			</div>
 		</section>
-		<section><Steps /></section>
+		<section class="steps"><Steps /></section>
 		<h3>Features</h3>
 		<section class="product-detail">
 			<div class="one">
@@ -109,9 +111,11 @@
 	.wrapper {
 		display: flex;
 		flex-direction: column;
+		width: 100%;
 		min-height: 100vh;
 		background-color: #0a1015;
 		color: #f9fafb;
+		overflow-x: hidden;
 	}
 	header {
 		display: flex;
@@ -119,18 +123,18 @@
 		align-items: center;
 		margin-top: 2rem;
 	}
-
 	main {
 		flex: 1;
 		margin-bottom: 5rem;
 	}
 	section {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
+		align-content: center;
+		justify-content: center;
+		flex-direction: column;
 		padding-bottom: 15rem;
 	}
-
 	.logo {
 		display: flex;
 		justify-content: space-between;
@@ -144,6 +148,7 @@
 	}
 	.intro {
 		margin-top: 15rem;
+		width: 100%;
 		text-align: center;
 		margin-bottom: 3rem;
 	}
@@ -157,37 +162,47 @@
 	h1 {
 		font-size: 6.4rem;
 		max-width: 80rem;
-		margin: 0;
+		margin: 0 auto;
 		line-height: 6rem;
 	}
 	h2 {
 		font-weight: normal;
-		font-size: 2rem;
+		font-size: 1.8rem;
 		padding: 1rem;
 	}
-	.papper-cut {
-		margin-top: -5rem;
-	}
 	.product {
-		margin-top: -75rem;
-		position: relative;
+		margin: 0 auto;
+		text-align: center;
+		width: 100%;
+		height: 90rem;
 	}
-	.product img {
-		align-items: center;
+	.product-showcase {
 		width: 100rem;
+		position: relative;
+		padding-top: 15rem;
+	}
+	.symbol {
+		min-width: 90rem;
+		min-height: 90rem;
+		position: absolute;
+		z-index: 0;
+	}
+	.steps {
+		width: 100%;
+		margin: 0 auto;
 	}
 	.product-detail {
 		display: flex;
 		flex-direction: row;
 		align-items: baseline;
 		justify-content: center;
+		width: 100%;
 	}
 	.one,
 	.two,
 	.three {
 		display: flex;
 		flex-direction: row;
-		padding: 2rem;
 	}
 	h3,
 	h5 {
@@ -204,7 +219,6 @@
 		line-height: 2.8rem;
 		font-weight: normal;
 	}
-
 	.description {
 		display: flex;
 		max-width: 25rem;
@@ -215,33 +229,52 @@
 		margin-bottom: 1rem;
 		text-align: center;
 	}
-
 	@media (max-width: 991.98px) {
+		.intro {
+			margin-top: 5rem;
+			text-align: center;
+			padding-bottom: 2rem;
+		}
+		.top-right {
+			display: none;
+			visibility: hidden;
+		}
+		section {
+			padding: 0;
+		}
 		h1 {
-			font-size: 7.8rem;
-			line-height: 6.8rem;
+			font-size: 2.8rem;
+			line-height: 2.8rem;
 		}
 		h2 {
-			font-size: 2rem;
-		}
-		.papper-cut {
-			max-width: 90rem;
-			height: 90rem;
-			position: relative;
+			font-size: 1.6rem;
 		}
 		.product {
-			margin-top: -65rem;
+			height: 40rem;
 		}
-		.product img {
-			width: 95rem;
+		.symbol {
+			width: 35rem;
+			height: 35rem;
+			min-width: 35rem;
+			min-height: 35rem;
+		}
+		.product-showcase {
+			width: 35rem;
+			padding-top: 6rem;
 		}
 		.description {
 			width: 30rem;
 			justify-content: center;
 		}
+		.steps {
+			align-items: unset;
+			width: 40rem;
+		}
 		.product-detail {
 			flex-direction: column;
 			align-items: center;
+			justify-content: space-between;
+			height: 20rem;
 		}
 		.one,
 		.two,
@@ -250,14 +283,14 @@
 		}
 		h3,
 		h5 {
-			font-size: 4rem;
+			font-size: 3rem;
 		}
 		h4 {
-			font-size: 2.4rem;
+			font-size: 1.4rem;
 		}
 		p {
-			font-size: 1.6rem;
-			line-height: 2.6rem;
+			font-size: 1.2rem;
+			line-height: 1.6rem;
 		}
 	}
 </style>

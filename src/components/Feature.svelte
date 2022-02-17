@@ -22,10 +22,14 @@
 	}
 	@media (max-width: 991.98px) {
 		.circle {
-			width: 15rem;
-			height: 15rem;
-			min-width: 15rem;
-			min-height: 15rem;
+			width: 5rem;
+			height: 5rem;
+			min-width: 5rem;
+			min-height: 5rem;
+		}
+		img {
+			width: 2rem;
+			min-width: 2rem;
 		}
 	}
 </style>

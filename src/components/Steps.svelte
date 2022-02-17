@@ -1,4 +1,4 @@
-<section>
+<div class="container">
 	<div class="circle">
 		<p>Explore</p>
 	</div>
@@ -23,16 +23,15 @@
 	<div class="circle">
 		<p>Act</p>
 	</div>
-</section>
+</div>
 
 <style>
-	section {
+	.container {
 		display: flex;
+		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		padding: 4rem;
-		width: 100%;
-		max-width: 100rem;
+		width: 100rem;
 	}
 	.circle {
 		display: flex;
@@ -67,27 +66,31 @@
 		border-left: 1.3rem solid #f9fafb;
 	}
 	@media (max-width: 991.98px) {
-		section {
-			width: auto;
+		.container {
+			width: 100%;
+		}
+		.arrow {
+			padding: 0;
 		}
 		.circle {
-			width: 15rem;
-			height: 15rem;
-			min-width: 15rem;
-			min-height: 15rem;
+			width: 5rem;
+			height: 5rem;
+			min-width: 5rem;
+			min-height: 5rem;
+			padding: 1rem;
 		}
 		.line {
-			width: 2rem;
+			width: 1rem;
 		}
 		.triangle {
 			width: 0;
 			height: 0;
-			border-top: 0.5rem solid transparent;
-			border-bottom: 0.5rem solid transparent;
-			border-left: 1rem solid #f9fafb;
+			border-top: 0.3rem solid transparent;
+			border-bottom: 0.3rem solid transparent;
+			border-left: 0.5rem solid #f9fafb;
 		}
 		p {
-			font-size: 1.8rem;
+			font-size: 1rem;
 		}
 	}
 </style>
