@@ -51,7 +51,8 @@
 	}
 	.wrapper {
 		display: flex;
-		height: 100vh;
+		height: 100%;
+		background-color: #e3e8ec;
 	}
 	img {
 		width: auto;
@@ -60,9 +61,10 @@
 	section {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		align-items: center;
-		margin-top: 20%;
 		width: 50vw;
+		margin-top: -30%;
 	}
 	.inner {
 		display: flex;
