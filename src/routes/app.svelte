@@ -1,12 +1,14 @@
 <script lang="ts">
 	import '../global.css';
 	import { onMount } from 'svelte';
+
 	import auth from '../lib/authService';
-	import { isAuthenticated, setError, user } from '../lib/store';
+	import { isAuthenticated, organizations, organization, setError, user } from '../lib/store';
 
 	import { navOptions } from '../components/Navigation.svelte';
 	import Icon from '../components/icons/Icon.svelte';
 	import Login from '../components/Login.svelte';
+	import { varibales } from '$lib/variables';
 
 	let auth0Client;
 
@@ -14,7 +16,32 @@
 		auth0Client = await auth.createClient();
 		isAuthenticated.set(await auth0Client.isAuthenticated());
 		user.set(await auth0Client.getUser());
+		// store values
+		organizations.set(await getOrganizations());
+		getOrg();
+		handleErrorMessage();
 	});
+
+	function getOrgId(orgName) {
+		return $isAuthenticated ? orgName.id === $user.org_id : null;
+	}
+	function getOrg() {
+		organization.set($organizations.find(getOrgId));
+	}
+	async function getOrganizations() {
+		const response = await fetch('https://dev-8oc3hfqx.us.auth0.com/api/v2/organizations', {
+			method: 'GET',
+			headers: {
+				authorization: `Bearer ${varibales.access_token}`
+			}
+		})
+			.then((res) => res.json())
+			.catch((error) => {
+				console.log('Error:', error);
+			});
+
+		return response;
+	}
 
 	function login() {
 		auth.loginWithPopup(auth0Client);
@@ -31,28 +58,45 @@
 		selected = navOptions[event.srcElement.id];
 		intSelected = event.srcElement.id;
 	}
+	const handleErrorMessage = () => {
+		const org = $setError.includes('organization') ? $setError : 'org';
+		switch ($setError) {
+			case org:
+				return 'You are not appart of this organization. Request access from your administrator';
+			case 'Popup closed':
+				return 'Popup closed, please try again';
+			case 'Timeout':
+				return 'App not responding, please try again ';
+			default:
+				return '';
+		}
+	};
 </script>
+
+<svelte:head>
+	<title>{$isAuthenticated ? 'Dashboard' : 'Sign In'}</title>
+</svelte:head>
 
 <main class="container">
 	{#if $isAuthenticated}
 		<nav>
-			<h1>Faktor</h1>
+			<h1>{$organization.name}</h1>
 			<ul class="nav-links">
 				{#each navOptions as option, i}
 					<li class="nav-item" class:active={intSelected == i ? 'active' : ''}>
 						<Icon name={option.page} />
-						<a id={i} on:click={changeComponent}>{option.page}</a>
+						<button id={i} on:click={changeComponent}>{option.page}</button>
 					</li>
 				{/each}
-				<li><a on:click={logout}>Log out</a></li>
 			</ul>
+			<li><button href="/login" on:click={logout}>Log out</button></li>
 		</nav>
-		<div class="inner">
-			<svelte:component this={selected.component} />
-		</div>
 	{:else}
-		<Login on:click={login} error={$setError} />
+		<Login on:click={login} error={handleErrorMessage()} />
 	{/if}
+	<div class="inner">
+		<svelte:component this={selected.component} />
+	</div>
 </main>
 
 <style>
@@ -65,9 +109,9 @@
 	nav {
 		text-align: center;
 		width: 25rem;
+		padding-top: 4rem;
 	}
 	h1 {
-		padding: 1rem;
 		text-transform: uppercase;
 	}
 	.nav-links {
@@ -77,7 +121,7 @@
 		flex-direction: column;
 		padding: 0;
 		margin: 5rem;
-		height: 22rem;
+		height: 20rem;
 	}
 	.nav-links a {
 		padding-left: 1rem;
@@ -102,6 +146,15 @@
 		height: 5rem;
 		background-color: #e3e8ec;
 		border-radius: 10px;
+	}
+	button {
+		border: none;
+		cursor: pointer;
+		background: none;
+		font-size: 1.6rem;
+		padding: 0 1.3rem 0 1rem;
+		color: #6e7378;
+		text-transform: capitalize;
 	}
 
 	.inner {
