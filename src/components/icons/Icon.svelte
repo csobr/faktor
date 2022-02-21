@@ -8,14 +8,14 @@
 </script>
 
 {#if name === 'overview'}
-	<OverviewIcon color="#6e7378" width={22} height={22} />
+	<OverviewIcon color="#0e171f" width={22} height={22} />
 {/if}
 {#if name === 'sites'}
-	<FactoryIcon color="#6e7378" width={20} height={20} />
+	<FactoryIcon color="#0e171f" width={20} height={20} />
 {/if}
 {#if name === 'treatment'}
-	<RecycleIcon color="#6e7378" width={22} height={22} />
+	<RecycleIcon color="#0e171f" width={22} height={22} />
 {/if}
 {#if name === 'impact'}
-	<ImpactIcon color="#6e7378" width={28} height={28} />
+	<ImpactIcon color="#0e171f" width={28} height={28} />
 {/if}

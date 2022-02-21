@@ -108,11 +108,14 @@
 	}
 	nav {
 		text-align: center;
-		width: 25rem;
+		width: 18rem;
 		padding-top: 4rem;
+		padding-left: 2rem;
 	}
 	h1 {
 		text-transform: uppercase;
+		padding-bottom: 1rem;
+		margin-left: -3rem;
 	}
 	.nav-links {
 		display: flex;
@@ -120,43 +123,34 @@
 		justify-content: space-between;
 		flex-direction: column;
 		padding: 0;
-		margin: 5rem;
-		height: 20rem;
-	}
-	.nav-links a {
-		padding-left: 1rem;
-		color: #6e7378;
-		text-decoration: none;
-		font-size: 1.6rem;
-		text-transform: capitalize;
+		height: 22rem;
 	}
 	.nav-item {
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
 		list-style: none;
-		width: 15rem;
+		height: 5rem;
+		width: 19rem;
 		padding-left: 2rem;
 	}
 	.active {
 		display: flex;
 		align-items: center;
-		padding-left: 2rem;
-		width: 15rem;
+		width: 19rem;
 		height: 5rem;
 		background-color: #e3e8ec;
-		border-radius: 10px;
+		border-radius: 1rem;
 	}
 	button {
 		border: none;
 		cursor: pointer;
 		background: none;
 		font-size: 1.6rem;
-		padding: 0 1.3rem 0 1rem;
-		color: #6e7378;
+		padding: 0 1.3rem 0 2rem;
+		color: #0e171f;
 		text-transform: capitalize;
 	}
-
 	.inner {
 		padding-left: 5rem;
 		padding-top: 3rem;
