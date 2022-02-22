@@ -1,1 +1,1 @@
-<strong>Impact</strong>
+<h2>Impact</h2>

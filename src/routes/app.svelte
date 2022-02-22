@@ -108,14 +108,15 @@
 	}
 	nav {
 		text-align: center;
-		width: 18rem;
+		width: 20rem;
 		padding-top: 4rem;
 		padding-left: 2rem;
 	}
 	h1 {
 		text-transform: uppercase;
 		padding-bottom: 1rem;
-		margin-left: -3rem;
+		padding-left: 2rem;
+		text-align: left;
 	}
 	.nav-links {
 		display: flex;
@@ -152,7 +153,7 @@
 		text-transform: capitalize;
 	}
 	.inner {
-		padding-left: 5rem;
+		padding-left: 3rem;
 		padding-top: 3rem;
 		margin: 2rem;
 		background-color: rgb(255, 255, 255);

@@ -28,7 +28,6 @@
 		width: 25rem;
 		height: 9rem;
 		padding: 1rem;
-		margin-left: 3rem;
 	}
 
 	h3 {

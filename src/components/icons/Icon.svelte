@@ -8,7 +8,7 @@
 </script>
 
 {#if name === 'overview'}
-	<OverviewIcon color="#0e171f" width={22} height={22} />
+	<OverviewIcon color="#0e171f" width={23} height={23} />
 {/if}
 {#if name === 'sites'}
 	<FactoryIcon color="#0e171f" width={20} height={20} />
@@ -17,5 +17,5 @@
 	<RecycleIcon color="#0e171f" width={22} height={22} />
 {/if}
 {#if name === 'impact'}
-	<ImpactIcon color="#0e171f" width={28} height={28} />
+	<ImpactIcon color="#0e171f" width={27} height={28} />
 {/if}
