@@ -17,8 +17,8 @@
 		border-radius: 50%;
 	}
 	img {
-		width: 4rem;
-		min-width: 4rem;
+		width: 3rem;
+		min-width: 3rem;
 	}
 	@media (max-width: 991.98px) {
 		.circle {

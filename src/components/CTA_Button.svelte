@@ -31,6 +31,7 @@
 	@media (max-width: 991.98px) {
 		button {
 			padding: 1.4rem 1.4rem;
+			font-size: 1rem;
 		}
 	}
 </style>
