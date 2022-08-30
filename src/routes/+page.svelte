@@ -8,7 +8,7 @@
   const date: Date = new Date();
 </script>
 
-<div class="wrapper" style="overflow-y:{`${$scroll ? 'hidden' : 'hidden'}`}">
+<div class="wrapper" style="overflow-y: {`${$scroll ? 'scroll' : 'hidden'}`}">
   <main>
     <header>
       <div class="logo">
@@ -78,10 +78,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 100vh;
-    background-color: #0a1015;
-    color: #f9fafb;
-    overflow-x: hidden;
+    height: 100vh;
+    position: relative;
   }
   header {
     display: flex;
