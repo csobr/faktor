@@ -1,7 +1,3 @@
-<script>
-  '../global.css';
-</script>
-
 <svelte:head>
   <script
     async
