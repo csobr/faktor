@@ -1,4 +1,5 @@
 <script lang="ts">
+  import '../global.css';
   import Button from '../components/CTA_Button.svelte';
   import Steps from '../components/Steps.svelte';
 
@@ -80,6 +81,8 @@
     width: 100%;
     height: 100vh;
     position: relative;
+    background-color: var(--background);
+    color: var(--color);
   }
   header {
     display: flex;
@@ -106,10 +109,10 @@
     left: 4rem;
     position: relative;
   }
-  /* .top-right {
-		right: 0;
-		margin-right: 2rem;
-	} */
+  .top-right {
+    right: 0;
+    margin-right: 2rem;
+  }
   .intro {
     margin-top: 15rem;
     width: 100%;
