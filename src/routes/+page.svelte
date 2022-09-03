@@ -29,7 +29,13 @@
       </div>
       <CookieBanner />
       <div class="product">
-        <img class="symbol" src="depth.svg" alt="Background layer" />
+        <div class="depth">
+          <div class="layer1">
+            <div class="layer2">
+              <div class="layer3" />
+            </div>
+          </div>
+        </div>
         <img class="product-showcase" src="landing_product.png" alt="product view" />
       </div>
     </section>
@@ -149,11 +155,34 @@
     position: relative;
     padding-left: 10rem;
   }
-  .symbol {
-    min-width: 90rem;
-    min-height: 90rem;
+  .depth * {
+    border-radius: 50%;
+  }
+  .depth {
+    display: grid;
+    place-items: center;
+    background-color: #9ea2a5;
+    border: 5rem solid #b6b9bb;
+    width: 90rem;
+    height: 90rem;
+    border-radius: 50%;
     position: absolute;
-    z-index: 0;
+  }
+
+  .layer1 {
+    display: grid;
+    place-items: center;
+    border: 5rem solid #868b8f;
+    width: 70rem;
+    height: 70rem;
+    background-color: #6e7378;
+  }
+  .layer3 {
+    display: grid;
+    place-items: center;
+    width: 60rem;
+    height: 60rem;
+    background-color: #565c62;
   }
   .steps {
     width: 100%;
@@ -231,11 +260,17 @@
     .product {
       height: 40rem;
     }
-    .symbol {
-      width: 35rem;
-      height: 35rem;
-      min-width: 35rem;
-      min-height: 35rem;
+    .depth {
+      width: 25rem;
+      height: 25rem;
+    }
+    .layer1 {
+      width: 15rem;
+      height: 15rem;
+    }
+    .layer3 {
+      width: 10rem;
+      height: 10rem;
     }
     .product-showcase {
       width: 35rem;
