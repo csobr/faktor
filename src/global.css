@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:wght@300;400&display=swap');
 :root {
   --color: #f9fafb;
   --background: #0a1015;
@@ -13,7 +14,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   overflow-x: hidden;
   background-color: var(--background);
@@ -26,4 +27,5 @@ h4,
 h5,
 p {
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
