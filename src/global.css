@@ -20,12 +20,16 @@ body {
   background-color: var(--background);
   color: var(--color);
 }
+
 h1,
 h2,
 h3,
 h4,
-h5,
-p {
+h5 {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  margin: 0;
 }
